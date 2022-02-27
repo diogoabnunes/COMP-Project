@@ -1,0 +1,811 @@
+{
+  "rootNode": {
+    "kind": "Program",
+    "attributes": {
+      "line": "1",
+      "column": "1"
+    },
+    "children": [
+      {
+        "kind": "ImportDeclaration",
+        "attributes": {
+          "line": "1",
+          "qualifiedName": "io",
+          "column": "1",
+          "name": "io"
+        },
+        "children": []
+      },
+      {
+        "kind": "ClassDeclaration",
+        "attributes": {
+          "line": "2",
+          "column": "1"
+        },
+        "children": [
+          {
+            "kind": "Class",
+            "attributes": {
+              "line": "2",
+              "column": "14",
+              "name": "Simple"
+            },
+            "children": []
+          },
+          {
+            "kind": "VarDeclaration",
+            "attributes": {
+              "line": "3",
+              "column": "2",
+              "name": "x"
+            },
+            "children": [
+              {
+                "kind": "Type",
+                "attributes": {
+                  "line": "3",
+                  "column": "2",
+                  "name": "int"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "MethodDeclaration",
+            "attributes": {
+              "line": "5",
+              "column": "12",
+              "name": "add"
+            },
+            "children": [
+              {
+                "kind": "Type",
+                "attributes": {
+                  "line": "5",
+                  "column": "12",
+                  "name": "int"
+                },
+                "children": []
+              },
+              {
+                "kind": "Parameter",
+                "attributes": {
+                  "line": "5",
+                  "column": "20",
+                  "name": "a"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "5",
+                      "column": "20",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Parameter",
+                "attributes": {
+                  "line": "5",
+                  "column": "27",
+                  "name": "b"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "5",
+                      "column": "27",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "6",
+                  "column": "3",
+                  "name": "x"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "6",
+                      "column": "3",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "7",
+                  "column": "9",
+                  "name": "c"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "7",
+                      "column": "9",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "8",
+                  "column": "34"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "8",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "Operation",
+                    "attributes": {
+                      "line": "8",
+                      "column": "15",
+                      "name": "+"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "8",
+                          "column": "13",
+                          "name": "a"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "MethodCall",
+                        "attributes": {
+                          "line": "8",
+                          "column": "34",
+                          "name": "constInstr"
+                        },
+                        "children": [
+                          {
+                            "kind": "This",
+                            "attributes": {
+                              "line": "8",
+                              "column": "21",
+                              "name": "this"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "InsideFunction",
+                            "attributes": {
+                              "line": "8",
+                              "column": "33"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "ReturnExpression",
+                "attributes": {
+                  "line": "9",
+                  "column": "9"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "9",
+                      "column": "16",
+                      "name": "c"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "MainDeclaration",
+            "attributes": {
+              "line": "11",
+              "column": "12"
+            },
+            "children": [
+              {
+                "kind": "Args",
+                "attributes": {
+                  "line": "11",
+                  "column": "42",
+                  "name": "args"
+                },
+                "children": []
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "12",
+                  "column": "9",
+                  "name": "a"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "12",
+                      "column": "9",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "13",
+                  "column": "9",
+                  "name": "b"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "13",
+                      "column": "9",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "14",
+                  "column": "9",
+                  "name": "c"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "14",
+                      "column": "9",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "15",
+                  "column": "9",
+                  "name": "s"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "15",
+                      "column": "9",
+                      "name": "Simple"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "16",
+                  "column": "15"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "16",
+                      "column": "11",
+                      "name": "a"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "16",
+                      "column": "15",
+                      "name": "20"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "17",
+                  "column": "15"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "17",
+                      "column": "11",
+                      "name": "b"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "17",
+                      "column": "15",
+                      "name": "10"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "18",
+                  "column": "25"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "18",
+                      "column": "11",
+                      "name": "s"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "NewInstance",
+                    "attributes": {
+                      "line": "18",
+                      "column": "23",
+                      "name": "Simple"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "19",
+                  "column": "23"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "19",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "MethodCall",
+                    "attributes": {
+                      "line": "19",
+                      "column": "23",
+                      "name": "add"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "19",
+                          "column": "13",
+                          "name": "s"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "InsideFunction",
+                        "attributes": {
+                          "line": "19",
+                          "column": "19"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "19",
+                              "column": "19",
+                              "name": "a"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "19",
+                              "column": "21",
+                              "name": "b"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "MethodCall",
+                "attributes": {
+                  "line": "20",
+                  "column": "22",
+                  "name": "println"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "20",
+                      "column": "9",
+                      "name": "io"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "InsideFunction",
+                    "attributes": {
+                      "line": "20",
+                      "column": "20"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "20",
+                          "column": "20",
+                          "name": "c"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "MethodDeclaration",
+            "attributes": {
+              "line": "23",
+              "column": "12",
+              "name": "constInstr"
+            },
+            "children": [
+              {
+                "kind": "Type",
+                "attributes": {
+                  "line": "23",
+                  "column": "12",
+                  "name": "int"
+                },
+                "children": []
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "24",
+                  "column": "9",
+                  "name": "c"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "24",
+                      "column": "9",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "25",
+                  "column": "14"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "25",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "25",
+                      "column": "14",
+                      "name": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "26",
+                  "column": "14"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "26",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "26",
+                      "column": "14",
+                      "name": "4"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "27",
+                  "column": "14"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "27",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "27",
+                      "column": "14",
+                      "name": "8"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "28",
+                  "column": "15"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "28",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "28",
+                      "column": "15",
+                      "name": "14"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "29",
+                  "column": "16"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "29",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "29",
+                      "column": "16",
+                      "name": "250"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "30",
+                  "column": "16"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "30",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "30",
+                      "column": "16",
+                      "name": "400"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "31",
+                  "column": "17"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "31",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "31",
+                      "column": "17",
+                      "name": "1000"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "32",
+                  "column": "22"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "32",
+                      "column": "11",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "32",
+                      "column": "22",
+                      "name": "100474650"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "33",
+                  "column": "9"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "33",
+                      "column": "5",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "33",
+                      "column": "9",
+                      "name": "10"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "ReturnExpression",
+                "attributes": {
+                  "line": "34",
+                  "column": "9"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "34",
+                      "column": "16",
+                      "name": "c"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reports": []
+}

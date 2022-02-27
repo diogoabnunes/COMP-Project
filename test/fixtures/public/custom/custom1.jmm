@@ -1,0 +1,15 @@
+// Showcases both method overloading and ability to define static functions
+
+import io;
+class Custom{
+	public static void main(String[] args) {
+        io.println(Custom.func());
+        io.println(new Custom().func(0));
+	}
+	public static int func(){
+	    return 1;
+	}
+	public int func(int i){
+	    return i-1;
+	}
+}

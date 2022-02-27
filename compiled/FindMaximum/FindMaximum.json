@@ -1,0 +1,1072 @@
+{
+  "rootNode": {
+    "kind": "Program",
+    "attributes": {
+      "line": "1",
+      "column": "1"
+    },
+    "children": [
+      {
+        "kind": "ImportDeclaration",
+        "attributes": {
+          "line": "1",
+          "qualifiedName": "ioPlus",
+          "column": "1",
+          "name": "ioPlus"
+        },
+        "children": []
+      },
+      {
+        "kind": "ClassDeclaration",
+        "attributes": {
+          "line": "2",
+          "column": "1"
+        },
+        "children": [
+          {
+            "kind": "Class",
+            "attributes": {
+              "line": "2",
+              "column": "19",
+              "name": "FindMaximum"
+            },
+            "children": []
+          },
+          {
+            "kind": "VarDeclaration",
+            "attributes": {
+              "line": "3",
+              "column": "2",
+              "name": "test_arr"
+            },
+            "children": [
+              {
+                "kind": "Type",
+                "attributes": {
+                  "line": "3",
+                  "column": "2",
+                  "name": "int[]"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "VarDeclaration",
+            "attributes": {
+              "line": "4",
+              "column": "2",
+              "name": "a"
+            },
+            "children": [
+              {
+                "kind": "Type",
+                "attributes": {
+                  "line": "4",
+                  "column": "2",
+                  "name": "int"
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "kind": "MethodDeclaration",
+            "attributes": {
+              "line": "6",
+              "column": "9",
+              "name": "find_maximum"
+            },
+            "children": [
+              {
+                "kind": "Type",
+                "attributes": {
+                  "line": "6",
+                  "column": "9",
+                  "name": "int"
+                },
+                "children": []
+              },
+              {
+                "kind": "Parameter",
+                "attributes": {
+                  "line": "6",
+                  "column": "26",
+                  "name": "arr"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "6",
+                      "column": "26",
+                      "name": "int[]"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "7",
+                  "column": "3",
+                  "name": "i"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "7",
+                      "column": "3",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "8",
+                  "column": "3",
+                  "name": "maximum"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "8",
+                      "column": "3",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "9",
+                  "column": "3",
+                  "name": "value"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "9",
+                      "column": "3",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "11",
+                  "column": "8"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "11",
+                      "column": "5",
+                      "name": "i"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "11",
+                      "column": "8",
+                      "name": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "12",
+                  "column": "19"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "12",
+                      "column": "11",
+                      "name": "maximum"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "ArrayAccess",
+                    "attributes": {
+                      "line": "12",
+                      "column": "16"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "12",
+                          "column": "13",
+                          "name": "arr"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "12",
+                          "column": "18",
+                          "name": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "whileStatement",
+                "attributes": {
+                  "line": "13",
+                  "column": "3"
+                },
+                "children": [
+                  {
+                    "kind": "Less",
+                    "attributes": {
+                      "line": "13",
+                      "column": "14"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "13",
+                          "column": "10",
+                          "name": "i"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "DotLength",
+                        "attributes": {
+                          "line": "13",
+                          "column": "24",
+                          "name": "length"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "13",
+                              "column": "14",
+                              "name": "arr"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Assignment",
+                    "attributes": {
+                      "line": "14",
+                      "column": "18"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "14",
+                          "column": "10",
+                          "name": "value"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "ArrayAccess",
+                        "attributes": {
+                          "line": "14",
+                          "column": "15"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "14",
+                              "column": "12",
+                              "name": "arr"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "14",
+                              "column": "16",
+                              "name": "i"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "ifStatement",
+                    "attributes": {
+                      "line": "15",
+                      "column": "4"
+                    },
+                    "children": [
+                      {
+                        "kind": "Less",
+                        "attributes": {
+                          "line": "15",
+                          "column": "18"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "15",
+                              "column": "8",
+                              "name": "maximum"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "15",
+                              "column": "18",
+                              "name": "value"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Assignment",
+                        "attributes": {
+                          "line": "16",
+                          "column": "20"
+                        },
+                        "children": [
+                          {
+                            "kind": "Var",
+                            "attributes": {
+                              "line": "16",
+                              "column": "13",
+                              "name": "maximum"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "16",
+                              "column": "15",
+                              "name": "value"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "elseStatement",
+                        "attributes": {
+                          "line": "17",
+                          "column": "6"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Assignment",
+                    "attributes": {
+                      "line": "19",
+                      "column": "13"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "19",
+                          "column": "6",
+                          "name": "i"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "Operation",
+                        "attributes": {
+                          "line": "19",
+                          "column": "10",
+                          "name": "+"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "19",
+                              "column": "8",
+                              "name": "i"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "IntegerLiteral",
+                            "attributes": {
+                              "line": "19",
+                              "column": "13",
+                              "name": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "ReturnExpression",
+                "attributes": {
+                  "line": "22",
+                  "column": "3"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "22",
+                      "column": "10",
+                      "name": "maximum"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "MethodDeclaration",
+            "attributes": {
+              "line": "25",
+              "column": "9",
+              "name": "build_test_arr"
+            },
+            "children": [
+              {
+                "kind": "Type",
+                "attributes": {
+                  "line": "25",
+                  "column": "9",
+                  "name": "int"
+                },
+                "children": []
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "26",
+                  "column": "8"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "26",
+                      "column": "5",
+                      "name": "a"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "26",
+                      "column": "8",
+                      "name": "1"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "27",
+                  "column": "24"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "27",
+                      "column": "12",
+                      "name": "test_arr"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "NewArray",
+                    "attributes": {
+                      "line": "27",
+                      "column": "23"
+                    },
+                    "children": [
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "27",
+                          "column": "23",
+                          "name": "5"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "28",
+                  "column": "19"
+                },
+                "children": [
+                  {
+                    "kind": "ArrayAccess",
+                    "attributes": {
+                      "line": "28",
+                      "column": "11"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "28",
+                          "column": "11",
+                          "name": "test_arr"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "28",
+                          "column": "13",
+                          "name": "0"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "28",
+                      "column": "19",
+                      "name": "14"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "29",
+                  "column": "19"
+                },
+                "children": [
+                  {
+                    "kind": "ArrayAccess",
+                    "attributes": {
+                      "line": "29",
+                      "column": "11"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "29",
+                          "column": "11",
+                          "name": "test_arr"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "29",
+                          "column": "13",
+                          "name": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "29",
+                      "column": "19",
+                      "name": "28"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "30",
+                  "column": "18"
+                },
+                "children": [
+                  {
+                    "kind": "ArrayAccess",
+                    "attributes": {
+                      "line": "30",
+                      "column": "11"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "30",
+                          "column": "11",
+                          "name": "test_arr"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "30",
+                          "column": "13",
+                          "name": "2"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "30",
+                      "column": "18",
+                      "name": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "31",
+                  "column": "20"
+                },
+                "children": [
+                  {
+                    "kind": "ArrayAccess",
+                    "attributes": {
+                      "line": "31",
+                      "column": "11"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "31",
+                          "column": "11",
+                          "name": "test_arr"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "31",
+                          "column": "13",
+                          "name": "3"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Operation",
+                    "attributes": {
+                      "line": "31",
+                      "column": "18",
+                      "name": "-"
+                    },
+                    "children": [
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "31",
+                          "column": "18",
+                          "name": "0"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "31",
+                          "column": "20",
+                          "name": "5"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "32",
+                  "column": "19"
+                },
+                "children": [
+                  {
+                    "kind": "ArrayAccess",
+                    "attributes": {
+                      "line": "32",
+                      "column": "11"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "32",
+                          "column": "11",
+                          "name": "test_arr"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "32",
+                          "column": "13",
+                          "name": "4"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "32",
+                      "column": "19",
+                      "name": "12"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "ReturnExpression",
+                "attributes": {
+                  "line": "34",
+                  "column": "3"
+                },
+                "children": [
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "34",
+                      "column": "11",
+                      "name": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "MethodDeclaration",
+            "attributes": {
+              "line": "37",
+              "column": "9",
+              "name": "get_array"
+            },
+            "children": [
+              {
+                "kind": "Type",
+                "attributes": {
+                  "line": "37",
+                  "column": "9",
+                  "name": "int[]"
+                },
+                "children": []
+              },
+              {
+                "kind": "ReturnExpression",
+                "attributes": {
+                  "line": "38",
+                  "column": "3"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "38",
+                      "column": "10",
+                      "name": "test_arr"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "MainDeclaration",
+            "attributes": {
+              "line": "41",
+              "column": "9"
+            },
+            "children": [
+              {
+                "kind": "Args",
+                "attributes": {
+                  "line": "41",
+                  "column": "39",
+                  "name": "args"
+                },
+                "children": []
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "42",
+                  "column": "3",
+                  "name": "fm"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "42",
+                      "column": "3",
+                      "name": "FindMaximum"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "43",
+                  "column": "3",
+                  "name": "max"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "43",
+                      "column": "3",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "44",
+                  "column": "25"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "44",
+                      "column": "6",
+                      "name": "fm"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "NewInstance",
+                    "attributes": {
+                      "line": "44",
+                      "column": "23",
+                      "name": "FindMaximum"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "MethodCall",
+                "attributes": {
+                  "line": "45",
+                  "column": "22",
+                  "name": "build_test_arr"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "45",
+                      "column": "3",
+                      "name": "fm"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "InsideFunction",
+                    "attributes": {
+                      "line": "45",
+                      "column": "21"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "47",
+                  "column": "40"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "47",
+                      "column": "7",
+                      "name": "max"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "MethodCall",
+                    "attributes": {
+                      "line": "47",
+                      "column": "40",
+                      "name": "find_maximum"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "47",
+                          "column": "9",
+                          "name": "fm"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "InsideFunction",
+                        "attributes": {
+                          "line": "47",
+                          "column": "25"
+                        },
+                        "children": [
+                          {
+                            "kind": "MethodCall",
+                            "attributes": {
+                              "line": "47",
+                              "column": "39",
+                              "name": "get_array"
+                            },
+                            "children": [
+                              {
+                                "kind": "RestIdentifier",
+                                "attributes": {
+                                  "line": "47",
+                                  "column": "25",
+                                  "name": "fm"
+                                },
+                                "children": []
+                              },
+                              {
+                                "kind": "InsideFunction",
+                                "attributes": {
+                                  "line": "47",
+                                  "column": "38"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "MethodCall",
+                "attributes": {
+                  "line": "48",
+                  "column": "26",
+                  "name": "printResult"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "48",
+                      "column": "3",
+                      "name": "ioPlus"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "InsideFunction",
+                    "attributes": {
+                      "line": "48",
+                      "column": "22"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "48",
+                          "column": "22",
+                          "name": "max"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reports": []
+}

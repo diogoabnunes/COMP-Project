@@ -1,0 +1,85 @@
+{
+  "rootNode": {
+    "kind": "Program",
+    "attributes": {
+      "line": "1",
+      "column": "1"
+    },
+    "children": [
+      {
+        "kind": "ImportDeclaration",
+        "attributes": {
+          "line": "1",
+          "qualifiedName": "ioPlus",
+          "column": "1",
+          "name": "ioPlus"
+        },
+        "children": []
+      },
+      {
+        "kind": "ClassDeclaration",
+        "attributes": {
+          "line": "2",
+          "column": "1"
+        },
+        "children": [
+          {
+            "kind": "Class",
+            "attributes": {
+              "line": "2",
+              "column": "18",
+              "name": "HelloWorld"
+            },
+            "children": []
+          },
+          {
+            "kind": "MainDeclaration",
+            "attributes": {
+              "line": "3",
+              "column": "9"
+            },
+            "children": [
+              {
+                "kind": "Args",
+                "attributes": {
+                  "line": "3",
+                  "column": "39",
+                  "name": "args"
+                },
+                "children": []
+              },
+              {
+                "kind": "MethodCall",
+                "attributes": {
+                  "line": "4",
+                  "column": "27",
+                  "name": "printHelloWorld"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "4",
+                      "column": "3",
+                      "name": "ioPlus"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "InsideFunction",
+                    "attributes": {
+                      "line": "4",
+                      "column": "26"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reports": []
+}

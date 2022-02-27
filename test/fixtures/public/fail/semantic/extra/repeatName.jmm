@@ -1,0 +1,11 @@
+/*  REASON:
+    Variable already defined in the scope
+*/
+
+class T {
+    int a;
+    boolean a;
+    public static void main(String[] a) {
+        int a;
+    }
+}

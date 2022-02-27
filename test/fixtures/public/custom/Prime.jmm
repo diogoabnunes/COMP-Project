@@ -1,0 +1,40 @@
+// Shows all prime numbers between 1 and n
+import io;
+
+class Prime {
+	public static void main(String[] args) {
+	    int n;
+        int i;
+        int count;
+        int j;
+        int k;
+	    n = io.read();
+	    io.println();
+        j = 2;
+        while (j < n + 1) {
+            count = 0;
+            i = 1;
+            while (i < j + 1) {
+                k = Prime.mod(j, i);
+                if (k < 1) {
+                    count = count + 1;
+                } else {
+                }
+                i = i + 1;
+            }
+            if ((count < 3) && (1 < count)) {
+                io.println(j);
+            } else {
+            }
+            j = j + 1;
+        }
+    }
+
+	// Calculates a % b
+	public static int mod(int a, int b) {
+        while (b < a + 1) {
+            a = a - b;
+        }
+        return a;
+	}
+}

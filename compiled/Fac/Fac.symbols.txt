@@ -1,0 +1,10 @@
+Class: Fac
+Super: 
+
+Imports:
+ - io
+
+Fields: <no fields>
+
+Methods: 1
+ - int compFac(int num)

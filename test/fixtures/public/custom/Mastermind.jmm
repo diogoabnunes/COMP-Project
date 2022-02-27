@@ -1,0 +1,121 @@
+/*
+MasterMind implementation using 4 numbers.
+After running the program the first 4 numbers inserted (separated by newline) will be the list you're supposed to guess.
+Then the game will wait for the guesses, one at a time, until the player guesses correctly or the limit is reached.
+After guessing, there will appear, in order, the numbers -1, 0 or 1.
+-1 means the number at that position is not in result.
+0 means the number at that position is in the result but in another position.
+1 means the number is at the right position.
+*/
+
+import io;
+class MasterMind
+{
+    int[] result;
+    public static void main(String[]args) {
+        MasterMind mastermind;
+        mastermind = new MasterMind();
+        mastermind.start();
+    }
+
+    public int setResult() {
+        result = new int[4];
+        int n;
+        int i;
+        i = 0;
+        while(i < 4) {
+            n = io.read();
+            result[i] = n;
+            i = i + 1;
+        }
+        return 0;
+    }
+
+    public int start() {
+        this.setResult();
+        int plays;
+        plays = 0;
+        int[] playerTry;
+        while(plays < 10) {
+            playerTry = this.play();
+            if(this.checkVictory(playerTry)) {
+                plays = 10;
+            } else {
+                this.printPlay(playerTry);
+            }
+            plays = plays + 1;
+        }
+        return plays;
+    }
+
+    public int printPlay(int[] playerTry) {
+        int i;
+        int j;
+        int negative;
+        negative = 0 - 1;
+        i = 0;
+        while(i < 4) {
+            if (this.equals(playerTry[i], result[i])) {
+                io.print(1);
+            } else {
+                j = 0;
+                while(j < 4) {
+                    if (this.equals(playerTry[i], result[j])) {
+                        j = 5;
+                    } else {
+                    }
+                    j = j + 1;
+                }
+                if (this.equals(j, 4)) {
+                    io.print(negative);
+                } else {
+                    io.print(0);
+                }
+            }
+            i = i + 1;
+        }
+        io.println();
+        return 0;
+    }
+
+    public boolean checkVictory(int[] playerTry) {
+        int p0;
+        int p1;
+        int p2;
+        int p3;
+        int r0;
+        int r1;
+        int r2;
+        int r3;
+        p0 = playerTry[0];
+        p1 = playerTry[1];
+        p2 = playerTry[2];
+        p3 = playerTry[3];
+        r0 = result[0];
+        r1 = result[1];
+        r2 = result[2];
+        r3 = result[3];
+        return this.equals(p0, r0) && this.equals(p1, r1) && this.equals(p2, r2) && this.equals(p3, r3);
+    }
+
+    // Executes a == b
+    public boolean equals(int a, int b) {
+        return a < b + 1 && b < a + 1;
+    }
+
+    public int[] play() {
+        io.println();
+        io.println();
+        int[] playerTry;
+        int i;
+        i = 0;
+        int n;
+        playerTry = new int[4];
+        while(i < 4) {
+            n = io.read();
+            playerTry[i] = n;
+            i = i + 1;
+        }
+        return playerTry;
+    }
+}

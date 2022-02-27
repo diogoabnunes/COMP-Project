@@ -1,0 +1,31 @@
+// Showcases constant propagation
+
+import io;
+class Custom{
+	public static void main(String[] args) {
+	    int a;
+	    int b;
+	    a = 10;
+	    b = 45;
+
+        io.println(b / a + 34);
+
+        // In conditions, any variable changed inside the body can't be propagated because the program can't know which variable changing path it will take
+	    if (true){
+	        a = b;
+	    }
+	    else {
+	        a = 999;
+	    }
+
+        io.println(b / a + 34);
+
+        // In loops, any variable changed inside the body can't be propagated, since it will change after every loop
+        while(a < b * 2){
+            a = a + 5;
+        }
+
+        io.println(b / a + 34);
+	}
+
+}

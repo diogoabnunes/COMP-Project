@@ -1,0 +1,24 @@
+class myClass {
+    int a;
+    
+    public int get() {
+        return this.a;
+    }
+    public void put(int n) {
+        this.a = n;
+    }
+    public void m1() {
+        this.a = 2;
+        io.println(this.get());
+
+        myClassc1 = new myClass(3);
+        io.println(c1.get());
+        
+        c1.put(2);
+        io.println(c1.get());
+    }
+    public static void main(String[] args) {
+        myClassA = new myClass();
+        A.m1();
+    }
+}

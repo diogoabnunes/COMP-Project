@@ -1,0 +1,801 @@
+{
+  "rootNode": {
+    "kind": "Program",
+    "attributes": {
+      "line": "1",
+      "column": "1"
+    },
+    "children": [
+      {
+        "kind": "ImportDeclaration",
+        "attributes": {
+          "line": "1",
+          "qualifiedName": "io",
+          "column": "1",
+          "name": "io"
+        },
+        "children": []
+      },
+      {
+        "kind": "ClassDeclaration",
+        "attributes": {
+          "line": "2",
+          "column": "1"
+        },
+        "children": [
+          {
+            "kind": "Class",
+            "attributes": {
+              "line": "2",
+              "column": "18",
+              "name": "WhileAndIF"
+            },
+            "children": []
+          },
+          {
+            "kind": "MainDeclaration",
+            "attributes": {
+              "line": "4",
+              "column": "12"
+            },
+            "children": [
+              {
+                "kind": "Args",
+                "attributes": {
+                  "line": "4",
+                  "column": "42",
+                  "name": "args"
+                },
+                "children": []
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "5",
+                  "column": "9",
+                  "name": "a"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "5",
+                      "column": "9",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "6",
+                  "column": "9",
+                  "name": "b"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "6",
+                      "column": "9",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "7",
+                  "column": "9",
+                  "name": "c"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "7",
+                      "column": "9",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "8",
+                  "column": "9",
+                  "name": "d"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "8",
+                      "column": "9",
+                      "name": "int[]"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "9",
+                  "column": "15"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "9",
+                      "column": "11",
+                      "name": "a"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "9",
+                      "column": "15",
+                      "name": "20"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "10",
+                  "column": "15"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "10",
+                      "column": "11",
+                      "name": "b"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "10",
+                      "column": "15",
+                      "name": "10"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "11",
+                  "column": "24"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "11",
+                      "column": "11",
+                      "name": "d"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "NewArray",
+                    "attributes": {
+                      "line": "11",
+                      "column": "23"
+                    },
+                    "children": [
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "11",
+                          "column": "23",
+                          "name": "10"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "ifStatement",
+                "attributes": {
+                  "line": "12",
+                  "column": "9"
+                },
+                "children": [
+                  {
+                    "kind": "Less",
+                    "attributes": {
+                      "line": "12",
+                      "column": "17"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "12",
+                          "column": "13",
+                          "name": "a"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "12",
+                          "column": "17",
+                          "name": "b"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Assignment",
+                    "attributes": {
+                      "line": "13",
+                      "column": "21"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "13",
+                          "column": "16",
+                          "name": "c"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "Operation",
+                        "attributes": {
+                          "line": "13",
+                          "column": "19",
+                          "name": "-"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "13",
+                              "column": "18",
+                              "name": "a"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "IntegerLiteral",
+                            "attributes": {
+                              "line": "13",
+                              "column": "21",
+                              "name": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "elseStatement",
+                    "attributes": {
+                      "line": "14",
+                      "column": "10"
+                    },
+                    "children": [
+                      {
+                        "kind": "Assignment",
+                        "attributes": {
+                          "line": "15",
+                          "column": "20"
+                        },
+                        "children": [
+                          {
+                            "kind": "Var",
+                            "attributes": {
+                              "line": "15",
+                              "column": "15",
+                              "name": "c"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "Operation",
+                            "attributes": {
+                              "line": "15",
+                              "column": "18",
+                              "name": "-"
+                            },
+                            "children": [
+                              {
+                                "kind": "RestIdentifier",
+                                "attributes": {
+                                  "line": "15",
+                                  "column": "17",
+                                  "name": "b"
+                                },
+                                "children": []
+                              },
+                              {
+                                "kind": "IntegerLiteral",
+                                "attributes": {
+                                  "line": "15",
+                                  "column": "20",
+                                  "name": "1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "whileStatement",
+                "attributes": {
+                  "line": "19",
+                  "column": "9"
+                },
+                "children": [
+                  {
+                    "kind": "Less",
+                    "attributes": {
+                      "line": "19",
+                      "column": "23"
+                    },
+                    "children": [
+                      {
+                        "kind": "Exp",
+                        "attributes": {
+                          "line": "19",
+                          "column": "16"
+                        },
+                        "children": [
+                          {
+                            "kind": "Operation",
+                            "attributes": {
+                              "line": "19",
+                              "column": "17",
+                              "name": "-"
+                            },
+                            "children": [
+                              {
+                                "kind": "IntegerLiteral",
+                                "attributes": {
+                                  "line": "19",
+                                  "column": "17",
+                                  "name": "0"
+                                },
+                                "children": []
+                              },
+                              {
+                                "kind": "IntegerLiteral",
+                                "attributes": {
+                                  "line": "19",
+                                  "column": "19",
+                                  "name": "1"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "19",
+                          "column": "23",
+                          "name": "c"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Assignment",
+                    "attributes": {
+                      "line": "20",
+                      "column": "23"
+                    },
+                    "children": [
+                      {
+                        "kind": "ArrayAccess",
+                        "attributes": {
+                          "line": "20",
+                          "column": "14"
+                        },
+                        "children": [
+                          {
+                            "kind": "Var",
+                            "attributes": {
+                              "line": "20",
+                              "column": "14",
+                              "name": "d"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "20",
+                              "column": "15",
+                              "name": "c"
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "kind": "Operation",
+                        "attributes": {
+                          "line": "20",
+                          "column": "21",
+                          "name": "-"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "20",
+                              "column": "20",
+                              "name": "a"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "20",
+                              "column": "22",
+                              "name": "b"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Assignment",
+                    "attributes": {
+                      "line": "21",
+                      "column": "19"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "21",
+                          "column": "14",
+                          "name": "c"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "Operation",
+                        "attributes": {
+                          "line": "21",
+                          "column": "17",
+                          "name": "-"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "21",
+                              "column": "16",
+                              "name": "c"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "IntegerLiteral",
+                            "attributes": {
+                              "line": "21",
+                              "column": "19",
+                              "name": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Assignment",
+                    "attributes": {
+                      "line": "22",
+                      "column": "19"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "22",
+                          "column": "14",
+                          "name": "a"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "Operation",
+                        "attributes": {
+                          "line": "22",
+                          "column": "17",
+                          "name": "-"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "22",
+                              "column": "16",
+                              "name": "a"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "IntegerLiteral",
+                            "attributes": {
+                              "line": "22",
+                              "column": "19",
+                              "name": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Assignment",
+                    "attributes": {
+                      "line": "23",
+                      "column": "19"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "23",
+                          "column": "14",
+                          "name": "b"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "Operation",
+                        "attributes": {
+                          "line": "23",
+                          "column": "17",
+                          "name": "-"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "23",
+                              "column": "16",
+                              "name": "b"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "IntegerLiteral",
+                            "attributes": {
+                              "line": "23",
+                              "column": "19",
+                              "name": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "Assignment",
+                "attributes": {
+                  "line": "25",
+                  "column": "12"
+                },
+                "children": [
+                  {
+                    "kind": "Var",
+                    "attributes": {
+                      "line": "25",
+                      "column": "10",
+                      "name": "c"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "IntegerLiteral",
+                    "attributes": {
+                      "line": "25",
+                      "column": "12",
+                      "name": "0"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "whileStatement",
+                "attributes": {
+                  "line": "26",
+                  "column": "9"
+                },
+                "children": [
+                  {
+                    "kind": "Less",
+                    "attributes": {
+                      "line": "26",
+                      "column": "19"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "26",
+                          "column": "15",
+                          "name": "c"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "DotLength",
+                        "attributes": {
+                          "line": "26",
+                          "column": "27",
+                          "name": "length"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "26",
+                              "column": "19",
+                              "name": "d"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "MethodCall",
+                    "attributes": {
+                      "line": "27",
+                      "column": "29",
+                      "name": "println"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "27",
+                          "column": "13",
+                          "name": "io"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "InsideFunction",
+                        "attributes": {
+                          "line": "27",
+                          "column": "24"
+                        },
+                        "children": [
+                          {
+                            "kind": "ArrayAccess",
+                            "attributes": {
+                              "line": "27",
+                              "column": "25"
+                            },
+                            "children": [
+                              {
+                                "kind": "RestIdentifier",
+                                "attributes": {
+                                  "line": "27",
+                                  "column": "24",
+                                  "name": "d"
+                                },
+                                "children": []
+                              },
+                              {
+                                "kind": "RestIdentifier",
+                                "attributes": {
+                                  "line": "27",
+                                  "column": "26",
+                                  "name": "c"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Assignment",
+                    "attributes": {
+                      "line": "28",
+                      "column": "19"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "28",
+                          "column": "14",
+                          "name": "c"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "Operation",
+                        "attributes": {
+                          "line": "28",
+                          "column": "17",
+                          "name": "+"
+                        },
+                        "children": [
+                          {
+                            "kind": "RestIdentifier",
+                            "attributes": {
+                              "line": "28",
+                              "column": "16",
+                              "name": "c"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "IntegerLiteral",
+                            "attributes": {
+                              "line": "28",
+                              "column": "19",
+                              "name": "1"
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reports": []
+}

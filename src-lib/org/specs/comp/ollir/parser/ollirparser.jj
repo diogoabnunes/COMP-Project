@@ -1,0 +1,808 @@
+/*
+ * Copyright (c) 2021, FEUP, Compilers Course
+ * All rights reserved.
+ *
+ * This is a JavaCC grammar for OLLIR v1.0 code.
+ *
+ * This version of the grammar is in some parts permissive for clearity
+ * and accepts OLLIR code that would need a semantic analysis to check validity.
+ * We note, however, that the OLLIR code is expected to be generated from compilers and
+ * that code will not have the possible semantic errors.
+ *
+ * Author: João MP Cardoso
+ * Email: jmpc@fe.up.pt
+ * March 2021
+ */
+
+options {
+  LOOKAHEAD = 1;
+  STATIC = false;
+}
+
+PARSER_BEGIN(OllirParser)
+
+package org.specs.comp.ollir.parser;
+
+import java.io.*;
+import java.util.ArrayList;
+import org.specs.comp.ollir.*;
+
+/**
+ * Grammar to parse OLLIR 1.0
+ * @author XXX - simplified version
+ */
+public class OllirParser
+{
+
+    ClassUnit myClass = new ClassUnit();
+
+    public ClassUnit getMyClass() {
+        return this.myClass;
+    }
+
+
+	public OllirParser(String fileName)
+   {
+		this(System.in);
+		try {
+			this.ReInit(new FileInputStream(new File(fileName)));
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+
+        //this.myClass = new ClassUnit();
+
+   }
+
+  public static void main(String[] args) {
+
+    OllirParser parser;
+
+    if (args.length == 0) {
+      System.out.println("OLLIR 0.1:  Reading from standard input . . .");
+      parser = new OllirParser(System.in);
+    } else if (args.length == 1) {
+      System.out.println("OLLIR 0.1:  Reading from file " + args[0] + " . . .");
+      try {
+        parser = new OllirParser(new java.io.FileInputStream(args[0]));
+      } catch (java.io.FileNotFoundException e) {
+        System.out.println("OLLIR 0.1:  File " + args[0] + " not found.");
+        return;
+      }
+    } else {
+      System.out.println("OLLIR 0.1:  Usage is one of:");
+      System.out.println("         java Ollir < inputfile");
+      System.out.println("OR");
+      System.out.println("         java Ollir inputfile");
+      return;
+    }
+
+    try {
+      parser.ClassUnit();
+      System.out.println("OLLIR 0.1:  OLLIR code parsed successfully.");
+    } catch (ParseException e) {
+      System.out.println(e.getMessage());
+      System.out.println("OLLIR 0.1:  Encountered errors during parse.");
+    }
+  }
+
+}
+
+PARSER_END(OllirParser)
+
+/* WHITE SPACE */
+
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+| "\f"
+}
+
+/* COMMENTS */
+
+MORE :
+{
+  <"/**" ~["/"]> { input_stream.backup(1); } : IN_FORMAL_COMMENT
+|
+  "/*" : IN_MULTI_LINE_COMMENT
+}
+
+SPECIAL_TOKEN :
+{
+  <SINGLE_LINE_COMMENT: "//" (~["\n", "\r"])* ("\n" | "\r" | "\r\n")?>
+}
+
+<IN_FORMAL_COMMENT>
+SPECIAL_TOKEN :
+{
+  <FORMAL_COMMENT: "*/" > : DEFAULT
+}
+
+<IN_MULTI_LINE_COMMENT>
+SPECIAL_TOKEN :
+{
+  <MULTI_LINE_COMMENT: "*/" > : DEFAULT
+}
+
+<IN_FORMAL_COMMENT,IN_MULTI_LINE_COMMENT>
+MORE :
+{
+  < ~[] >
+}
+
+/* RESERVED WORDS AND LITERALS */
+
+TOKEN :
+{
+
+  < I32: "i32" >
+|  < BOOLEAN: "bool" >
+|  < VOID: "V" >
+| < ARRAY: "array" >
+| < STRING: "String" >
+| < FINAL: "final" >
+| < GOTO: "goto" >
+| < IF: "if" >
+| < IMPORT: "import" >
+| < INTERFACE: "interface" >
+| < NEW: "new" >
+//| < NULL: "null" >
+| < PACKAGE: "package">
+| < PRIVATE: "private" >
+| < PROTECTED: "protected" >
+| < PUBLIC: "public" >
+| < RETURN: "ret" >
+| < STATIC: "static" >
+| < THIS: "this" >
+| < LDC: "ldc" >
+| < INVOKESPECIAL: "invokespecial" >
+//| < INVOKEDYNAMIC: "invokedynamic" >
+| < INVOKEVIRTUAL: "invokevirtual" >
+| < INVOKEINTERFACE: "invokeinterface" >
+| < INVOKESTATIC: "invokestatic" >
+| < ARRAYLENGTH: "arraylength" >
+| < GETFIELD: "getfield" >
+| < PUTFIELD: "putfield" >
+| < GETSTATIC: "getstatic" >
+| < PUTSTATIC: "putstatic" >
+| < METHOD: ".method" >
+| < CONSTRUCT: ".construct" >
+| < FIELD: ".field" >
+| < EXTENDS: "extends" >
+
+}
+
+/* LITERALS */
+
+TOKEN :
+{
+	< INTEGER_LITERAL:  (["0"-"9"])+ >
+	| < STRING_LITERAL:
+      "\""
+      (   (~["\"","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )*
+      "\""
+  >
+}
+
+/* IDENTIFIERS */
+
+TOKEN :
+{
+	< IDENTIFIER: <LETTER> (<PART_LETTER>)* >
+	| < #LETTER: ["A"-"Z", "a"-"z", "_"] >
+	| < #PART_LETTER: ["0"-"9", "A"-"Z", "_", "a"-"z"] >
+}
+
+/* SEPARATORS */
+
+TOKEN :
+{
+  < LPAREN: "(" >
+| < RPAREN: ")" >
+| < LBRACE: "{" >
+| < RBRACE: "}" >
+| < LBRACKET: "[" >
+| < RBRACKET: "]" >
+| < SEMICOLON: ";" >
+| < COMMA: "," >
+| < DOT: "." >
+}
+
+/* OPERATORS */
+
+TOKEN :
+{
+  < ASSIGN: ":=" >
+| < LT: "<" >
+| < COLON: ":" >
+| < EQ: "==" >
+| < LE: "<=" >
+| < GE: ">=" >
+| < NE: "!=" >
+| < SC_OR: "||" >
+| < SC_AND: "&&" >
+| < SC_NOT: "!" >
+| < PLUS: "+" >
+| < MINUS: "-" >
+| < MUL: "*" >
+| < DIV: "/" >
+| < BIT_AND: "&" >
+| < BIT_OR: "|" >
+| < BIT_XOR: "^" >
+| < REM: "%" >
+| < GT: ">" >
+| < LSHIFT: "<<" >
+| < RSHIFT: ">>" >
+| < RRSHIFT: ">>>" >
+}
+
+
+/*****************************************
+ * THE OLLIR GRAMMAR STARTS HERE *
+ *****************************************/
+
+/*
+ * Program structuring syntax follows.
+ */
+
+void ClassUnit():
+{}
+{
+	( LOOKAHEAD(3) PackageDeclaration() )?
+	( ImportDeclaration() )*
+	Main()
+	<EOF>
+}
+
+
+void Main():
+{Token t1, t2;}
+{
+	ClassModifiers()
+	t1=<IDENTIFIER> {this.myClass.setClassName(t1.image);} [<EXTENDS> t2=<IDENTIFIER> { this.myClass.setSuperClass(t2.image); }]
+	"{"
+	Fields()
+	Methods()
+	"}"
+}
+
+void ClassModifiers():
+{}
+{
+	(
+	<PROTECTED> {this.myClass.setClassAccessModifier(AccessModifiers.PROTECTED);}
+	| <STATIC> {this.myClass.setStaticClass();}
+    | <FINAL> {this.myClass.setFinalClass();}
+    | <PUBLIC>  {this.myClass.setClassAccessModifier(AccessModifiers.PUBLIC);}
+    | <PRIVATE> {this.myClass.setClassAccessModifier(AccessModifiers.PRIVATE);}
+	)*
+}
+
+void FieldModifiers(Field field):
+{}
+{
+	(
+	<PROTECTED> {field.setFieldAccessModifier(AccessModifiers.PROTECTED);}
+	| <STATIC> {field.setStaticField();}
+    | <FINAL> {field.setFinalField();}
+    | <PUBLIC>  {field.setFieldAccessModifier(AccessModifiers.PUBLIC);}
+    | <PRIVATE> {field.setFieldAccessModifier(AccessModifiers.PRIVATE);}
+	)*
+}
+
+void MethodModifiers(Method method):
+{}
+{
+	(
+	<PROTECTED> {method.setMethodAccessModifier(AccessModifiers.PROTECTED);}
+	| <STATIC> {method.setStaticMethod();}
+    | <FINAL> {method.setFinalMethod();}
+    | <PUBLIC>  {method.setMethodAccessModifier(AccessModifiers.PUBLIC);}
+    | <PRIVATE> {method.setMethodAccessModifier(AccessModifiers.PRIVATE);}
+	)*
+}
+
+void Fields():
+{Token t1, t2; int sign=1; Type tp1;}
+{
+	(
+	    {Field field = new Field();}
+		<FIELD> FieldModifiers(field) t1=<IDENTIFIER> tp1=FullType()
+		    [":=" ("+" | "-" {sign=-1;})? t2=<INTEGER_LITERAL>
+		        {field.setInitialValue(sign*Integer.parseInt(t2.image));}
+		    ] ";"
+	    {
+            field.setFieldName(t1.image);
+            field.setFieldType(tp1);
+            this.myClass.addField(field);
+        }
+	)*
+}
+
+
+
+void Methods():
+{Token t1; Type tp1; }
+{
+	(
+	    {
+          Method method = new Method(getMyClass());
+        }
+		((<METHOD> | ".construct" {method.setConstructMethod();})
+		MethodModifiers(method) t1=<IDENTIFIER> "(" Params(method) ")" tp1=FullType()
+				"{" Instructions(method) "}"
+		)
+		{
+            method.setReturnType(tp1);
+            method.setMethodName(t1.image);
+            this.myClass.addMethod(method);
+        }
+	)*
+}
+
+
+Operand FirstArg():
+{Token t1; Operand o1; ElementType opType; Type tp1=null;}
+{
+	(
+    t1=<IDENTIFIER> {opType = ElementType.OBJECTREF;} tp1=FullType() // FullType()
+	| t1=<THIS> {opType = ElementType.THIS;}
+	| t1=<ARRAY> {opType = ElementType.ARRAYREF;}
+	)
+	{
+        if(opType ==  ElementType.OBJECTREF)
+            o1 = new Operand(t1.image, tp1);
+        else if(opType ==  ElementType.THIS)
+            o1 = new Operand(t1.image, new ClassType(ElementType.THIS, this.myClass.getClassName()));
+        else
+            o1 = new Operand(t1.image, new ArrayType());
+        return o1;
+    }
+}
+
+/*
+	For the first argument of the "new" operation
+*/
+Operand FirstArgNew():
+{Token t1; Operand o1;}
+{
+
+	t1=<IDENTIFIER>
+	{
+       return new Operand(t1.image, new ClassType(ElementType.OBJECTREF, t1.image));
+        }
+	//| <THIS> {El.setElementType(ElementType.OPERAND); El.setElementType(ElementType.THIS);} // TODO
+	| t1=<ARRAY>
+	{
+      return new Operand(t1.image, new ArrayType());
+    }
+}
+
+/*
+	For the first argument of the "invokestatic" operation
+*/
+Operand FirstArgInvStatic():
+{Token t1; Operand o1;}
+{
+	t1=<IDENTIFIER>
+	{
+      return new Operand(t1.image, new ClassType(ElementType.CLASS, this.myClass.getClassName()));
+}
+}
+
+/*
+* Only some of the strings represent arguments.
+* They consists of <IDENTIFIER> or "<init>"
+*/
+Element SecondArg():
+{Token t1; Element el; ElementType opType;}
+{
+	t1=<STRING_LITERAL> {opType = ElementType.STRING;}
+	{
+         el = new LiteralElement(t1.image, new Type(opType));
+         return el;
+    }
+}
+
+ArrayList<Element> OtherArgs():
+{ArrayList<Element> listArgs = new ArrayList<Element>();
+Element el;}
+{
+	("," el =Arg() {listArgs.add(el);})*
+	{
+	    return listArgs;
+	}
+}
+
+Element Arg():
+{Token t1=null,t2; boolean isParam = false; StringBuilder literal=new StringBuilder(); Type tp1;}
+{
+	([
+	    "$" t1=<INTEGER_LITERAL> "."
+	    {
+            isParam=true;
+        }
+	]
+	(t2=<IDENTIFIER> | t2=<THIS> )tp1=FullType()  //FullType())
+	    {
+
+            Operand el = new Operand(t2.image, tp1);
+            if(isParam) el.setParamId(Integer.parseInt(t1.image));
+            return el;
+        }
+     )
+	|
+	("+" | "-" {literal.append("-");} )? t2=<INTEGER_LITERAL> {literal.append(t2.image);} tp1=FullType() //FullType()
+	    {
+            LiteralElement el = new LiteralElement(literal.toString(), tp1);
+            return el;
+        }
+}
+
+
+ArrayList<Element> Args():
+{ArrayList<Element> listArgs = new ArrayList<Element>();
+ Element el;}
+{
+	(
+	el=Arg() {listArgs.add(el);}
+	("," el=Arg() {listArgs.add(el);})*
+	    {return listArgs;}
+	)?
+}
+
+Operand Param():
+{Token t1; Type tp1; Operand o1;}
+{
+	t1=<IDENTIFIER> tp1=FullType()
+	//| ("+" | "-")? <INTEGER_LITERAL> "." FullType()
+	{
+        o1 = new Operand(t1.image, tp1);
+        return o1;
+    }
+}
+
+/**
+*
+*/
+void Params(Method m1):
+// If method is static, paramId starts at 0; otherwise, starts at 1
+{Operand p1; int paramId = m1.isStaticMethod() ? 0 : 1;}
+//{Operand p1; int paramId = 0;}
+{
+	(
+	p1=Param() {p1.setParamId(paramId); paramId++; m1.addParam(p1);}
+	("," p1=Param() {p1.setParamId(paramId); paramId++; m1.addParam(p1);})*
+	)?
+}
+
+/**
+* Syntax rule translated to semantic rule to be checked (. array)* (. ...)
+*/
+Type FullType():
+{Type tp1=null; int dims=0; Token t1=null; ElementType type1=null, type2=null;}
+{
+    ("."
+        (
+        <ARRAY> {dims++; type1 = ElementType.ARRAYREF;}
+        | t1=<IDENTIFIER> {type2 = ElementType.OBJECTREF;}
+        | <I32> {type2 = ElementType.INT32;}
+        | <BOOLEAN> {type2 = ElementType.BOOLEAN;}
+        | <STRING> {type2 = ElementType.STRING;}
+        | "V" {type2 = ElementType.VOID;}
+        )
+     )*
+    {
+        if(type1 == ElementType.ARRAYREF) {
+            tp1=new ArrayType();
+            ((ArrayType) tp1).setNumDimensions(dims);
+            ((ArrayType) tp1).setTypeOfElements(type2);
+        } else {
+          	if(type2 == null) {
+         		throw generateParseException();
+          	}
+            switch(type2) {
+            case INT32:
+                tp1=new Type(ElementType.INT32);
+                break;
+           case OBJECTREF:
+                tp1=new ClassType(type2, t1.image);
+                break;
+           case STRING:
+                tp1=new Type(ElementType.STRING);
+                break;
+           case VOID:
+                tp1=new Type(ElementType.VOID);
+                break;
+           case BOOLEAN:
+                tp1=new Type(ElementType.BOOLEAN);
+                break;
+           default:
+                break;
+            }
+          
+        }
+        return tp1;
+    }
+}
+
+Type Assign():
+{Type tp1;}
+{
+	":=" tp1=FullType()
+	{return tp1;}
+}
+
+void Instructions(Method m1):
+{Token t1=null, tlabel=null; Instruction i1 = null, i2; boolean labelBefore = false;
+Element o1=null, o2, o3; Operation oper; Type tp1; boolean hasOperand=false;
+ArrayList<Element> listArgs; ArrayList<String> labels = new ArrayList<String>();}
+{
+	(
+
+	(LOOKAHEAD(2) tlabel=<IDENTIFIER> ":" {labelBefore = true; labels.add(tlabel.image);})*
+    (
+    <NEW> "(" o1=FirstArgNew() listArgs=OtherArgs() ")" tp1=FullType() ";"
+	{
+	    i1 = new CallInstruction(CallType.NEW, o1, listArgs, tp1);
+	}
+	| <INVOKESPECIAL> "(" o1=FirstArg() "," o2=SecondArg() listArgs=OtherArgs() ")" tp1=FullType() ";"
+	    {
+            i1 =  new CallInstruction(CallType.invokespecial, o1, o2, listArgs, tp1);
+        }
+	| <INVOKESTATIC> "("  o1=FirstArgInvStatic() "," o2=SecondArg() listArgs=OtherArgs() ")" tp1=FullType() ";"
+	    {
+            i1 = new CallInstruction(CallType.invokestatic, o1, o2, listArgs, tp1);
+        }
+	| "invokevirtual" "(" o1=FirstArg() "," o2=SecondArg() listArgs=OtherArgs() ")" tp1=FullType() ";"
+	    {
+            i1 = new CallInstruction(CallType.invokevirtual, o1, o2, listArgs, tp1);
+        }
+	| <PUTFIELD> "(" o1=FirstArg() "," o2=Arg() "," o3=Arg() ")" tp1=FullType() ";"
+	    {
+    i1= new PutFieldInstruction(o1, o2, o3, tp1);
+}
+	| o1=Result() tp1=Assign() i2=Expression() ";"
+	    {
+            i1=new AssignInstruction(o1, tp1, i2);
+        }
+	| <IF> "(" i1= Cond() ")" <GOTO> t1=<IDENTIFIER> ";"
+	    {
+    ((CondBranchInstruction) i1).setLabel(t1.image);
+}
+	| <GOTO> t1=<IDENTIFIER> ";"
+	    {
+            i1 = new GotoInstruction(t1.image);
+         }
+	| <RETURN> tp1=FullType() [o1=Operand() {hasOperand=true;}] ";"
+	    {
+            if(hasOperand)
+                i1 = new ReturnInstruction(o1);
+            else
+                i1 = new ReturnInstruction();
+        }
+	)
+	{
+	  	for(var label : labels) {
+        	m1.addLabel(label, i1);	  	  
+	  	}
+		// Clear labels
+	  	labels = new ArrayList<String>();
+
+        if(labelBefore) {
+            //m1.addLabel(tlabel.image, i1);
+            labelBefore = false;
+        }
+        m1.addInstr(i1);
+    }
+	)*
+}
+
+Instruction Expression():
+{Instruction i1; Element o1,o2=null; Type tp1=null; Token t1;
+ArrayList<Element> listArgs; Operation oper = null; OperationType opType=null;
+boolean binaryOp = false;}
+{
+
+    (
+	<GETFIELD> "(" o1=FirstArg() "," o2=Arg() ")" tp1=FullType()
+	{
+	 i1= new GetFieldInstruction(o1, o2, tp1);
+}
+	| <NEW> "(" o1=FirstArgNew() listArgs=OtherArgs() ")" tp1=FullType()
+	{
+    	    i1 = new CallInstruction(CallType.NEW, o1, listArgs, tp1);
+    }
+	| <LDC> "(" t1=<STRING_LITERAL> ")" "." "String"  // TODO: to consider other type of literals: int...
+	    {
+            i1 = new CallInstruction(CallType.ldc, new LiteralElement(t1.image, new Type(ElementType.STRING)), new Type(ElementType.STRING));
+         }
+	| <INVOKESPECIAL> "(" o1=FirstArg() "," o2=SecondArg() listArgs=OtherArgs() ")" tp1=FullType()
+	    {
+            i1 =  new CallInstruction(CallType.invokespecial, o1, o2, listArgs, tp1);
+        }
+	| "invokestatic" "("  o1=FirstArgInvStatic() "," o2=SecondArg() listArgs=OtherArgs() ")" tp1=FullType()
+	    {
+             i1 =  new CallInstruction(CallType.invokestatic, o1, o2, listArgs, tp1);
+        }
+	| <INVOKEVIRTUAL> "(" o1=FirstArg() "," o2=SecondArg() listArgs=OtherArgs() ")" tp1=FullType()
+        {
+            i1 =  new CallInstruction(CallType.invokevirtual, o1, o2, listArgs, tp1);
+        }
+	| <ARRAYLENGTH> "(" o1=Arg() ")" tp1=FullType()
+	    {
+            i1 =  new CallInstruction(CallType.arraylength, o1, tp1);
+         }
+	| o1=Operand() (oper=Operation() o2=Operand() {binaryOp=true;})?
+	{
+        if(binaryOp)
+            i1 = new BinaryOpInstruction(o1, oper, o2); // i1 = new BinaryOpInstruction(o1, new Operation(opType, tp1), o2);
+        else            i1 = new SingleOpInstruction(o1);
+     }
+	| ("!" {opType=OperationType.NOTB;} | "~" {opType=OperationType.NOT;}) tp1=FullType() o1=Operand()
+	    {
+
+             i1 = new UnaryOpInstruction(new Operation(opType, tp1), o1);
+        }
+	)
+	{
+	    return i1;
+	}
+}
+
+CondBranchInstruction Cond():
+{CondBranchInstruction i1; Element o1, o2; Operation oper;}
+{
+	o1=Operand() oper=Cmp() o2=Operand()
+	{
+        i1 = new CondBranchInstruction(o1, o2, oper);
+        return i1;
+	}
+
+}
+
+Operand Var():
+{Operand o1; Token t1=null, t2; boolean isParam = false; Type tp1;}
+{
+	["$" t1=<INTEGER_LITERAL> "." {isParam = true;}] t2=<IDENTIFIER> tp1 = FullType()
+	{
+        o1 = new Operand(t2.image, tp1);
+        if(isParam) o1.setParamId(Integer.parseInt(t1.image));
+        return o1;
+    }
+}
+
+
+Operand Result():
+{Type tp1; Element o2; String sign=""; Token t1=null, t2; boolean isParam = false; boolean isArray=false;
+ArrayList<Element> listIndexes = new ArrayList<Element>();}
+{
+	["$" t1=<INTEGER_LITERAL> "." {isParam=true;}] t2=<IDENTIFIER> ("[" o2=Var() "]" {listIndexes.add(o2); isArray = true;})* tp1=FullType()
+	{
+         Operand o1;
+         if(isArray)
+              o1 = new ArrayOperand(t2.image, tp1, listIndexes);
+         else
+              o1 = new Operand(t2.image, tp1);
+         if(isParam) o1.setParamId(Integer.parseInt(t1.image));
+         return o1;
+    }
+}
+
+Element Operand():
+{Type tp1; Element o2; String sign=""; Token t1=null, t2; boolean isParam = false; boolean isArray=false;
+ArrayList<Element> listIndexes = new ArrayList<Element>();}
+{
+	(
+	["$" t1=<INTEGER_LITERAL> "." {isParam=true;}] (t2=<IDENTIFIER> | t2=<THIS>) ("[" o2=Var() "]" {listIndexes.add(o2); isArray = true;})* tp1=FullType()
+	    {
+           Operand o1;
+           if(isArray)
+               o1 = new ArrayOperand(t2.image, tp1, listIndexes);
+           else
+               o1 = new Operand(t2.image, tp1);
+           if(isParam) o1.setParamId(Integer.parseInt(t1.image));
+           return o1;
+        }
+	| ("+" | "-" {sign="-";})? t1=<INTEGER_LITERAL> tp1=FullType()
+	    {
+            LiteralElement o1 = new LiteralElement(sign + t1.image, tp1);
+            return o1;
+        } // done
+	)
+
+}
+
+Operation Cmp():
+{Operation o1; OperationType type; Type tp1;}
+{
+	(
+	<GE> {type = OperationType.GTE;}
+	| "<=" {type = OperationType.LTE;}
+	| <GT> {type = OperationType.GTH;}
+	| <LT> {type = OperationType.LTH;}
+	| <EQ> {type = OperationType.EQ;}
+	| <NE> {type = OperationType.NEQ;}
+	| <SC_OR> {type = OperationType.ORB;}
+	| <SC_AND> {type = OperationType.ANDB;}
+	| "!" {type = OperationType.NOTB;}
+	)
+	tp1=FullType()
+	{
+        o1 = new Operation(type, tp1);
+        return o1;
+    }
+}
+
+Operation Operation():
+{Operation oper; OperationType type; Type tp1;}
+{
+	(
+		<MUL> {type = OperationType.MUL;}
+		| <PLUS> {type = OperationType.ADD;}
+		| <MINUS> {type = OperationType.SUB;}
+		| <SC_OR> {type = OperationType.ORB;}
+		| <SC_AND> {type = OperationType.ANDB;}
+		| <DIV> {type = OperationType.DIV;}
+		| <BIT_AND> {type = OperationType.AND;}
+		| <BIT_OR> {type = OperationType.OR;}
+		| <BIT_XOR> {type = OperationType.XOR;}
+		| <GE> {type = OperationType.GTE;}
+		| <LE> {type = OperationType.LTE;}
+		| <GT> {type = OperationType.GTH;}
+		| <LT> {type = OperationType.LTH;}
+		| <EQ> {type = OperationType.EQ;}
+		| <NE> {type = OperationType.NEQ;}
+	    | "!" {type = OperationType.NOTB;}
+	    | "~" {type = OperationType.NOT;}
+	)
+	tp1=FullType()
+	{
+        oper = new Operation(type, tp1);
+        return oper;
+    }
+}
+
+/**
+*
+*/
+void PackageDeclaration():
+{String str;}
+{
+  "package" str=Name() ";" {this.myClass.setClassName(str);}
+}
+
+/**
+*
+*/
+void ImportDeclaration():
+{StringBuilder str; String str1;}
+{
+  "import" {str=new StringBuilder();}
+  [ "static" {str.append("static ");}] str1=Name() {str.append(str1);}
+  [ "." "*" {str.append(".*");}] ";"  // for this version of Java-- we don't need the "static" and the option to end with a ".*"
+    {
+        this.myClass.addImport(str.toString());
+     }
+}
+
+/**
+*
+*/
+String Name():
+{Token t1; StringBuilder str = new StringBuilder();}
+{
+  t1=<IDENTIFIER> {str.append(t1.image);}
+	( LOOKAHEAD(2)"." {str.append(".");} t1=<IDENTIFIER> {str.append(t1.image);})*
+	{return str.toString();}
+}

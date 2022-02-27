@@ -1,0 +1,9 @@
+Class: WhileAndIF
+Super: 
+
+Imports:
+ - io
+
+Fields: <no fields>
+
+Methods: 0

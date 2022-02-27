@@ -1,0 +1,10 @@
+class Classe {
+    int[] f;
+    
+    public int initialize(){
+        f = new int[5];
+        
+        f[1] = 7;
+        return 0;
+    }
+}

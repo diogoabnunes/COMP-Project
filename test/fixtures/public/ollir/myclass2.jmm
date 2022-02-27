@@ -1,0 +1,8 @@
+class myClass {
+    public int[] sum(int[] A, int[] B) {
+        int[] C;
+        C = new int[A.length];
+        C[0] = A[0] + B[0];
+        return C;
+    }
+}

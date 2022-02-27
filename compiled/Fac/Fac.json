@@ -1,0 +1,372 @@
+{
+  "rootNode": {
+    "kind": "Program",
+    "attributes": {
+      "line": "1",
+      "column": "1"
+    },
+    "children": [
+      {
+        "kind": "ImportDeclaration",
+        "attributes": {
+          "line": "1",
+          "qualifiedName": "io",
+          "column": "1",
+          "name": "io"
+        },
+        "children": []
+      },
+      {
+        "kind": "ClassDeclaration",
+        "attributes": {
+          "line": "2",
+          "column": "1"
+        },
+        "children": [
+          {
+            "kind": "Class",
+            "attributes": {
+              "line": "2",
+              "column": "11",
+              "name": "Fac"
+            },
+            "children": []
+          },
+          {
+            "kind": "MethodDeclaration",
+            "attributes": {
+              "line": "3",
+              "column": "12",
+              "name": "compFac"
+            },
+            "children": [
+              {
+                "kind": "Type",
+                "attributes": {
+                  "line": "3",
+                  "column": "12",
+                  "name": "int"
+                },
+                "children": []
+              },
+              {
+                "kind": "Parameter",
+                "attributes": {
+                  "line": "3",
+                  "column": "24",
+                  "name": "num"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "3",
+                      "column": "24",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "VarDeclaration",
+                "attributes": {
+                  "line": "4",
+                  "column": "9",
+                  "name": "num_aux"
+                },
+                "children": [
+                  {
+                    "kind": "Type",
+                    "attributes": {
+                      "line": "4",
+                      "column": "9",
+                      "name": "int"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "kind": "ifStatement",
+                "attributes": {
+                  "line": "5",
+                  "column": "9"
+                },
+                "children": [
+                  {
+                    "kind": "Less",
+                    "attributes": {
+                      "line": "5",
+                      "column": "19"
+                    },
+                    "children": [
+                      {
+                        "kind": "RestIdentifier",
+                        "attributes": {
+                          "line": "5",
+                          "column": "13",
+                          "name": "num"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "5",
+                          "column": "20",
+                          "name": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "Assignment",
+                    "attributes": {
+                      "line": "6",
+                      "column": "24"
+                    },
+                    "children": [
+                      {
+                        "kind": "Var",
+                        "attributes": {
+                          "line": "6",
+                          "column": "21",
+                          "name": "num_aux"
+                        },
+                        "children": []
+                      },
+                      {
+                        "kind": "IntegerLiteral",
+                        "attributes": {
+                          "line": "6",
+                          "column": "24",
+                          "name": "1"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "elseStatement",
+                    "attributes": {
+                      "line": "7",
+                      "column": "9"
+                    },
+                    "children": [
+                      {
+                        "kind": "Assignment",
+                        "attributes": {
+                          "line": "8",
+                          "column": "50"
+                        },
+                        "children": [
+                          {
+                            "kind": "Var",
+                            "attributes": {
+                              "line": "8",
+                              "column": "21",
+                              "name": "num_aux"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "Operation",
+                            "attributes": {
+                              "line": "8",
+                              "column": "27",
+                              "name": "*"
+                            },
+                            "children": [
+                              {
+                                "kind": "RestIdentifier",
+                                "attributes": {
+                                  "line": "8",
+                                  "column": "23",
+                                  "name": "num"
+                                },
+                                "children": []
+                              },
+                              {
+                                "kind": "Exp",
+                                "attributes": {
+                                  "line": "8",
+                                  "column": "30"
+                                },
+                                "children": [
+                                  {
+                                    "kind": "MethodCall",
+                                    "attributes": {
+                                      "line": "8",
+                                      "column": "49",
+                                      "name": "compFac"
+                                    },
+                                    "children": [
+                                      {
+                                        "kind": "This",
+                                        "attributes": {
+                                          "line": "8",
+                                          "column": "34",
+                                          "name": "this"
+                                        },
+                                        "children": []
+                                      },
+                                      {
+                                        "kind": "InsideFunction",
+                                        "attributes": {
+                                          "line": "8",
+                                          "column": "43"
+                                        },
+                                        "children": [
+                                          {
+                                            "kind": "Operation",
+                                            "attributes": {
+                                              "line": "8",
+                                              "column": "46",
+                                              "name": "-"
+                                            },
+                                            "children": [
+                                              {
+                                                "kind": "RestIdentifier",
+                                                "attributes": {
+                                                  "line": "8",
+                                                  "column": "43",
+                                                  "name": "num"
+                                                },
+                                                "children": []
+                                              },
+                                              {
+                                                "kind": "IntegerLiteral",
+                                                "attributes": {
+                                                  "line": "8",
+                                                  "column": "48",
+                                                  "name": "1"
+                                                },
+                                                "children": []
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "kind": "ReturnExpression",
+                "attributes": {
+                  "line": "9",
+                  "column": "9"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "9",
+                      "column": "16",
+                      "name": "num_aux"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "kind": "MainDeclaration",
+            "attributes": {
+              "line": "12",
+              "column": "12"
+            },
+            "children": [
+              {
+                "kind": "Args",
+                "attributes": {
+                  "line": "12",
+                  "column": "41",
+                  "name": "args"
+                },
+                "children": []
+              },
+              {
+                "kind": "MethodCall",
+                "attributes": {
+                  "line": "13",
+                  "column": "42",
+                  "name": "println"
+                },
+                "children": [
+                  {
+                    "kind": "RestIdentifier",
+                    "attributes": {
+                      "line": "13",
+                      "column": "9",
+                      "name": "io"
+                    },
+                    "children": []
+                  },
+                  {
+                    "kind": "InsideFunction",
+                    "attributes": {
+                      "line": "13",
+                      "column": "20"
+                    },
+                    "children": [
+                      {
+                        "kind": "MethodCall",
+                        "attributes": {
+                          "line": "13",
+                          "column": "41",
+                          "name": "compFac"
+                        },
+                        "children": [
+                          {
+                            "kind": "NewInstance",
+                            "attributes": {
+                              "line": "13",
+                              "column": "27",
+                              "name": "Fac"
+                            },
+                            "children": []
+                          },
+                          {
+                            "kind": "InsideFunction",
+                            "attributes": {
+                              "line": "13",
+                              "column": "38"
+                            },
+                            "children": [
+                              {
+                                "kind": "IntegerLiteral",
+                                "attributes": {
+                                  "line": "13",
+                                  "column": "40",
+                                  "name": "10"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reports": []
+}

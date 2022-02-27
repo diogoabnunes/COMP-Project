@@ -1,0 +1,8 @@
+import io;
+class NestedLoop{
+	public static void main(String[] args) {
+        int a;
+        a = 1 * 3 - 4 / 5 * (2-5);
+        io.println(a);
+	}
+}

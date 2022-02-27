@@ -1,0 +1,12 @@
+Class: Simple
+Super: 
+
+Imports:
+ - io
+
+Fields:
+ - int x
+
+Methods: 2
+ - int add(int a, int b)
+ - int constInstr()
